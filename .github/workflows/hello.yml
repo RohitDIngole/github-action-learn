@@ -24,4 +24,11 @@ jobs:
         run: echo "hello world !!"
 
       - name: print chelo again
+        run: cat /etc/os-release
+
+    steps:
+      - name: print hello again
+        run: echo "hello world !!"
+
+      - name: print chelo again
         run: cat /etc/os_release
