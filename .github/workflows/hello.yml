@@ -3,9 +3,10 @@ on:
   push:
     branches:
       -  main
-env:
-   JDK_VERSION: "openjdk11-jdk"
-jobs: 
+env: 
+  JDK_VERSION: "openjdk11-jdk"
+jobs:  
+
   install-java:
     runs-on: ubuntu-latest
     container:
@@ -13,21 +14,13 @@ jobs:
     steps:
       - name: install java
         run: |
-         apk add --no-cache $JDK_VERSION
-         java --version
-         echo "MAVEN_VERSION=1234" >> $GITHUB_ENV
+          apk add --no-cache $JDK_VERSION 
+          java --version
+          echo "MAVEN_VERSION=123" >> $GITHUB_ENV
       - name: print maven version
         run: echo $MAVEN_VERSION
-
-  print-env:
-       runs-on: ubuntu-latest
-       container:
-        image: alpine:latest
-       steps:
-         - name: print environment variable value
-           run: echo $JDK_VERSION
-            
     
+       
 
       
 
