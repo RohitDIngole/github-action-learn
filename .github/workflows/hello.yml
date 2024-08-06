@@ -1,23 +1,23 @@
-name: Learn basics of GitHub Action
-
+name: Learn basic of GitHub Action
 on:
   push:
     branches:
-      - master
-
-jobs:
+      -  main
+env: 
+  JDK_VERSION: "openjdk11-jdk"
+jobs:    
   install-java:
     runs-on: ubuntu-latest
     container:
       image: alpine:latest
-
     steps:
-      - name: Install Java
+      - name: install java
         run: |
-          apk add --no-cache openjdk11
+          apk 
+          run: java --version add --no-cache $ JDK_VERSION: "openjdk11-jdk"
+      - name: print java -version
 
-      - name: Print Java version
-        run: java -version
+    
 
       
 
